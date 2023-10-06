@@ -1,38 +1,46 @@
 {% extends 'tienda/layout.html' %}
-{% block content %}
-<br>
-<div class="card">
-    <br>
-    <div class="col-12 col-md-6 offset-md-3">
-        {% if form.errors %}
-        <p>El usuario y la clave no coinciden, por favor intente nuevamente.</p>
-        {% endif %}
-        {% if next %}
-        {% if user.is_authenticated %}
-        <p>Tu cuenta no tiene acceso a esta página. Para proceder,
-            por favor inicie sesión con una cuenta que tenga acceso.</p>
-        {% else %}
-        <p>Inicie sesión para ver esta página.</p>
-        {% endif %}
-        {% endif %}
-        <form method="post" action="{% url 'login' %}">
-            {% csrf_token %}
-            <div>
-                <td>Usuario</td>
-                <td>{{ form.username }}</td>
-            </div>
-            <div>
-                <td>{{ form.password.label_tag }}</td>
-                <td>{{ form.password }}</td>
-            </div>
-            <div>
-                <input type="submit" class="btn btn-primary" value="ACCEDER" />
-                <input type="hidden" name="next" value="{{ next }}" />
-            </div>
-        </form>
-    
-        <p><a href="{% url 'password_reset' %}">¿Olvidó su contraseña?</a></p>
-    </div>
-</div>
 
+{% block content %}
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card fondo-formulario-color">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Formulario de Inicio de Sesión</h3>
+                        <hr>
+                        {% if form.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                El usuario y la clave no coinciden, por favor intente nuevamente.
+                            </div>
+                        {% endif %}
+                        {% if next %}
+                            {% if user.is_authenticated %}
+                                <div class="alert alert-danger" role="alert">
+                                    Tu cuenta no tiene acceso a esta página. Para proceder, por favor inicie sesión con una cuenta que tenga acceso.
+                                </div>
+                            {% else %}
+                                <div class="alert alert-warning" role="alert">
+                                    Inicie sesión para ver esta página.
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                        <form method="post" action="{% url 'login' %}" class="mb-3">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="{{ form.username.id_for_label }}" class="form-label">Usuario</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.password.id_for_label }}" class="form-label">Contraseña</label>
+                                {{ form.password }}
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="ACCEDER">
+                            <input type="hidden" name="next" value="{{ next }}">
+                        </form>
+                        <p class="text-center"><a href="{% url 'password_reset' %}">¿Olvidó su contraseña?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

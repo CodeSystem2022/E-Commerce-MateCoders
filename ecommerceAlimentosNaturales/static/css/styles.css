@@ -65,3 +65,7 @@ body {
     font-family: Arial, sans-serif; /* Cambia la fuente según lo que necesites */
     margin: 35px; /* Agrega un margen alrededor de la tarjeta */
 }
+
+.fondo-formulario-color{
+    background-color: #D5A877;
+}
