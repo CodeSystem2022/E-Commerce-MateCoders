@@ -52,3 +52,16 @@ body {
     object-fit: cover;
     filter: brightness(0.6);
 }
+
+/* Estilos para la letra */
+.custom-text {
+    font-family: Arial, sans-serif; /* Cambia la fuente según lo que necesites */
+    font-size: 16px; /* Tamaño de la fuente en píxeles */
+    color: #FFE6C5; /* Color de la fuente en hexadecimal o nombre de color */
+}
+.ultimos-text {
+    font-size: 36px; /* Tamaño de la fuente en píxeles */
+    color: #FFE6C5; /* Color de la fuente en hexadecimal o nombre de color */
+    font-family: Arial, sans-serif; /* Cambia la fuente según lo que necesites */
+    margin: 35px; /* Agrega un margen alrededor de la tarjeta */
+}
