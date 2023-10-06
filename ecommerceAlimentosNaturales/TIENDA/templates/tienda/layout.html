@@ -14,7 +14,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
     
-    <link rel="stylesheet" href="{% static 'tienda/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <style>
         body {
             background: linear-gradient(to bottom, #D5A877, #400101); /* Cambia este gradiente según tu preferencia */
@@ -27,8 +27,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #8C2C08;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'tienda:home' %}" style="color: #ffffff;"><img src="media/img/logo.png" alt="Logo de la tienda" width="50" height="50">ALIMENTOS NATURALES</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <a class="navbar-brand" href="{% url 'tienda:home' %}" style="color: #ffffff;"><img src="{% static 'media/img/logo.png' %}" alt="Logo de la tienda" width="50" height="50">ALIMENTOS NATURALES</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"     
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
