@@ -41,3 +41,14 @@ body {
     margin: 10px; /* Agrega un margen alrededor de la tarjeta */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega un sombreado sutil */
 }
+
+
+
+.d-item{
+    height: 500px;
+}
+.d-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
