@@ -1,0 +1,37 @@
+{% extends 'tienda/layout.html' %}
+
+
+
+{% block body %}
+<a href=" {% url 'tienda:home' %} " class="btn btn-primary"> Volver al inicio</a>
+<form action="{% url 'tienda:agregar' %} ", method="POST" enctype="multipart/form-data"> 
+{% csrf_token %}
+<p> {{form.error}} </p>
+    <h3>Titulo: </h3>
+    {{form.titulo}}
+    
+    <p>Descripcion:</p>
+    {{form.descripcion}}
+    
+    <p>Imagen</p>
+    {{form.imagen}}
+    
+    <p>Precio: </p>
+    {{form.precio}}
+    
+    <p>Categoria:</p>
+    {{form.categoria}}
+    <input type="submit" class="btn btn-primary" value="Publicar">
+</form>
+
+
+
+
+
+
+
+{% endblock body %}
+
+
+
+
