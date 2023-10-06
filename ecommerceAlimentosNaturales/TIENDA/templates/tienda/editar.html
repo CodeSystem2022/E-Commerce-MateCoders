@@ -1,0 +1,25 @@
+{% extends 'tienda/layout.html' %}
+
+{% block body %}
+
+<form action="{% url 'tienda:editar' producto.id %} ", method="POST" enctype="multipart/form-data"> 
+    {% csrf_token %}
+        <h3>Titulo: </h3>
+        {{form.titulo}}
+        
+        <p>Descripcion:</p>
+        {{form.descripcion}}
+        
+        <p>Imagen</p>
+        {{form.imagen}}
+        
+        <p>Precio: </p>
+        {{form.precio}}
+        
+        <p>Categoria:</p>
+        {{form.categoria}}
+        <input type="submit" class="btn btn-primary" value="Publicar">
+    </form>
+
+
+{% endblock body %}

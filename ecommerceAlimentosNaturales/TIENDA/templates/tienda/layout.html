@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ALIMENTOS NATURALES</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="{% static 'tienda/style.css' %}">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #D5A877, #400101); /* Cambia este gradiente según tu preferencia */
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #8C2C08;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'tienda:home' %}" style="color: #ffffff;"><img src="media/img/logo.png" alt="Logo de la tienda" width="50" height="50">ALIMENTOS NATURALES</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color: #ffffff;" aria-current="page" href="{% url 'tienda:home' %} ">Home</a>
+                    </li>
+                    <a href="{% url 'tienda:acerca' %} " class="nav-link active" style="color: #ffffff;"> Acerca de</a>
+                    <a href="mailto: contacto@ALIMENTOSNATURALES.com" class="nav-link active" style="color: #ffffff;">Contacto</a>
+                    {% if perms.TIENDA.add_producto%}
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="{% url 'tienda:agregar' %}"style="color: #ffffff;">Agregar productos</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: #ffffff;">
+                            Categorias
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            {% for cat in categoria %}
+                            <li><a class="dropdown-item" href="{% url 'tienda:categorias' cat.id %} ">{{cat}}</a></li>
+                            {% endfor %}
+
+                        </ul>
+
+                    </li>
+                </ul>
+
+                <div class="dropdown">
+                    {% if user.is_authenticated %}
+                    Bienvenido!
+                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{user.username}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item btn btn-warning" href="{% url 'logout' %} " style="color: #ffffff;">Salir </a></li>
+
+                    </ul>
+                    {% else %}
+                
+                    <div class="d-grid gap-2 d-md-block" style="padding: 10px;">
+                        <button class="btn btn-outline-success" type="button" style="background-color: #3B873B; color: white;"><a href="{% url 'login' %}" style="color: inherit; text-decoration: none;">Ingresar</a></button>
+                        <button class="btn btn-outline-info" type="button" style="background-color: #D97925; color: white;"><a href="{% url 'USUARIOS:registrarse' %}" style="color: inherit; text-decoration: none;">Registrarse</a></button>
+                    </div>
+                    
+
+                    {% endif%}
+                </div>
+
+                &NonBreakingSpace;
+                <form action="{% url 'tienda:buscar' %}" method="get">
+
+                    <input name="buscar" type="text" placeholder="buscar...">
+                    <button type="submit" class="btn btn-outline-info">Buscar</button>
+                </form>
+                &NonBreakingSpace;
+                
+               
+                <!--si el usuario NO puede agregar productos (no es admin) puede ver el boton de carrito -->
+                    {% if not perms.TIENDA.add_producto %}
+                    <img src="https://image.flaticon.com/icons/png/512/419/419910.png" style="max-width: 25px;" alt=""
+                    srcset="">
+                <div class="" style="border-radius: 25%;  max-width: 55px; min-width: 25px ">
+                    <p class="font-weight-bold text-center"
+                        style="background-color: rgb(253, 0, 84); border-radius:50%; margin-top:2px ">
+
+                        {{cantidad_productos}}
+                    </p>
+
+                </div>
+                <a href=" {% url 'tienda:checkout' %} " class="btn btn-warning">Carrito </a>
+                {% endif %}
+                &NonBreakingSpace;
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="container">
+
+        {% block body %}
+
+        {% endblock body %}
+    </div>
+
+    <div class="container">
+
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+    <footer class="footer mt-auto py-3" style="background-color: #D5A877;">
+        <div class="container">
+            <div class="footer-copyright text-center py-2">
+                © 2023 ALIMENTOS NATURALES S.A
+                <a href="mailto: martinalejandrotorres77@gmail.com" style="color: #D5A877;">GRUPO: MateCoders.UTN</a>
+            </div>
+        </div>
+    </footer>
+    
+
+</body>
+
+</html>

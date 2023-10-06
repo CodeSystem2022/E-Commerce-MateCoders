@@ -1,0 +1,34 @@
+{% extends 'tienda/layout.html' %}
+{% block body %}
+<div class="container">
+
+    <h3>
+        {{ ctx.titulo }}
+        <small class="text-muted"> - {{ ctx.categoria }}</small>
+    </h3>
+    
+        <a href="{% url 'tienda:carrito' ctx.id %}" class=" btn btn-success" style="color: white;">Añadir al carrito</a>
+
+    
+    <p>
+        
+        {{ ctx.descripcion }}
+    </p>
+    <p>
+        
+       $ {{ ctx.precio }}
+    </p>
+    
+    
+    
+    <img src="{{ media_url  }} {{ ctx.imagen.url }} " alt=""  class="img-fluid img-thumbnail " style="max-width: 75%;"   >
+    <br>
+    
+</div>
+{% if perms.TIENDA.add_producto%}
+<a href=" {% url 'tienda:editar' ctx.id %}  " class="btn btn-info">Editar producto</a>
+<a href=" {%url 'tienda:eliminar' ctx.id %} " class="btn btn-danger">Eliminar producto</a>
+{% endif %}
+
+{% endblock body %}
+

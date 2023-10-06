@@ -1,0 +1,52 @@
+{% extends 'tienda/layout.html' %}
+
+
+{% block body %}
+
+
+
+<div class="container">
+   <h2>Lista</h2>
+   <a href=" {% url 'tienda:borrar_carrito' %} " class="btn btn-danger">Eliminar carrito </a>
+   <table class="table table-hover table-responsive-md">
+       {% for producto in productos  %}
+           <tr>
+               <th scope="col " class="col-sm-1"> <img src=" {{ media_url  }}{{ producto.imagen.url }}" style="max-width: 100%;" alt= {{producto.titulo}}>  </th>
+               <th scope="col"> {{producto.titulo}} </th>
+               <th scope="col">{{producto.descripcion |slice:"0:50"}}... </th>
+               <th scope="col">${{producto.precio}} </th>
+               
+               
+           </tr>
+         {% endfor %}
+   
+   </table>
+   
+   </div>
+
+
+
+
+
+
+<div class="container">
+   
+<hr>
+
+
+<h4>Total: </h4>
+<div class="container ">
+   
+   <button class=" btn btn-secondary"> {{ total }}$ </button>
+   <button class="btn btn-success"> 
+      <a href="{% url 'tienda:confirmar_pedido' %}  " style="color: white;">Confirmar pedido</a> 
+   </button>
+</div>
+
+
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'tienda/layout.html' %}
+{% load static %}
+{% block body %}
+<h2>últimos </h2>
+<div class="container">
+        <div class="row justify-content-md-around">
+            {% for producto in nuevos  %}
+                <div class="col-md-3" >
+                    <div class="card text-end carta-producto " >
+                        <div class="card-body ">
+                            <img src=" {{ media_url  }}{{ producto.imagen.url }}" class="card-img-top" alt="...">
+                            <h5 class="card-title">{{producto.titulo}}</h5>
+                            <p class="card-text">{{producto.descripcion |  slice:'0:50'}}...</p>
+                            <p class="card-text precio"> ${{producto.precio}} </p>
+                            
+                            <a href="{% url 'tienda:producto' producto.id %}  " class="btn btn-primary btn-ver-mas">ver más</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+    <hr>
+</div>
+
+
+<div class="container">
+<h2 class="text-center">Más productos</h2>
+<hr>
+
+
+<table class="table table-hover table-responsive-md">
+    {% for producto in productos  %}
+        <tr>
+            <td scope="col " class="col-sm-1"> <img src=" {{ media_url  }}{{ producto.imagen.url }}" class= "img-fluid" style="max-width: 55%;" alt= {{producto.titulo}}>  </td>
+            <td scope="col"> {{producto.titulo}} </td>
+            <td scope="col">{{producto.descripcion |slice:"0:50"}}... </td>
+            <td scope="col">${{producto.precio}} </td>
+            <td scope="col"><a href="{% url 'tienda:producto' producto.id %}  " class="btn btn-primary">ver más</a> </td>
+            
+        </tr>
+      {% endfor %}
+
+</table>
+
+</div>
+
+
+
+
+
+
+   
+
+       
+
+{% endblock body %}
+
