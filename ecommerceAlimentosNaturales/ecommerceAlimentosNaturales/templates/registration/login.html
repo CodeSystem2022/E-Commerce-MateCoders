@@ -1,0 +1,38 @@
+{% extends 'tienda/layout.html' %}
+{% block content %}
+<br>
+<div class="card">
+    <br>
+    <div class="col-12 col-md-6 offset-md-3">
+        {% if form.errors %}
+        <p>El usuario y la clave no coinciden, por favor intente nuevamente.</p>
+        {% endif %}
+        {% if next %}
+        {% if user.is_authenticated %}
+        <p>Tu cuenta no tiene acceso a esta página. Para proceder,
+            por favor inicie sesión con una cuenta que tenga acceso.</p>
+        {% else %}
+        <p>Inicie sesión para ver esta página.</p>
+        {% endif %}
+        {% endif %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div>
+                <td>Usuario</td>
+                <td>{{ form.username }}</td>
+            </div>
+            <div>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary" value="ACCEDER" />
+                <input type="hidden" name="next" value="{{ next }}" />
+            </div>
+        </form>
+    
+        <p><a href="{% url 'password_reset' %}">¿Olvidó su contraseña?</a></p>
+    </div>
+</div>
+
+{% endblock %}
