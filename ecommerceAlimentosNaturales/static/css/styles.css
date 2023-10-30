@@ -1,5 +1,7 @@
 body {
     background: linear-gradient(to bottom, #D5A877, #400101); /* Colores del gradiente, puedes cambiarlos según tu preferencia */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 

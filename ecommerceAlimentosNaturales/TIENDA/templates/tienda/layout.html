@@ -65,13 +65,16 @@
 
                 <div class="dropdown">
                     {% if user.is_authenticated %}
-                    Bienvenido!
+                    <div class="p-1" style="color: #ffffff">
+                        Bienvenido!
+                    </div>
+                    
                     <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         {{user.username}}
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item btn btn-warning" href="{% url 'logout' %} " style="color: #ffffff;">Salir </a></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Salir </a></li>
 
                     </ul>
                     {% else %}
@@ -118,7 +121,7 @@
 
 
 
-    <div class="container">
+    <div class="container" style="min-height: 85vh;">
 
         {% block body %}
 
