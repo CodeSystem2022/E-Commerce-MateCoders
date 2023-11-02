@@ -61,6 +61,13 @@ body {
     font-size: 16px; /* Tamaño de la fuente en píxeles */
     color: #FFE6C5; /* Color de la fuente en hexadecimal o nombre de color */
 }
+/* Estilo para letra de titulos*/
+h2 {
+    font-family: Arial, sans-serif; /* Cambia la fuente según lo que necesites */
+    font-size: 25px; /* Tamaño de la fuente en píxeles */
+    color: #FFE6C5; /* Color de la fuente en hexadecimal o nombre de color */
+}
+
 .ultimos-text {
     font-size: 36px; /* Tamaño de la fuente en píxeles */
     color: #FFE6C5; /* Color de la fuente en hexadecimal o nombre de color */

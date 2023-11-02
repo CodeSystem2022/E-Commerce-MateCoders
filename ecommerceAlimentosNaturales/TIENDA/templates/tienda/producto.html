@@ -1,5 +1,5 @@
 {% extends 'tienda/layout.html' %}
-{% block body %}
+{% block content %}
 <div class="container">
 
     <h3>
@@ -30,5 +30,5 @@
 <a href=" {%url 'tienda:eliminar' ctx.id %} " class="btn btn-danger">Eliminar producto</a>
 {% endif %}
 
-{% endblock body %}
+{% endblock content %}
 

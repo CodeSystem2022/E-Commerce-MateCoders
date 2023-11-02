@@ -2,7 +2,7 @@
 
 
 
-{% block body %}
+{% block content %}
 <a href=" {% url 'tienda:home' %} " class="btn btn-primary"> Volver al inicio</a>
 <form action="{% url 'tienda:agregar' %} ", method="POST" enctype="multipart/form-data"> 
 {% csrf_token %}
@@ -24,7 +24,7 @@
     <input type="submit" class="btn btn-primary" value="Publicar">
 </form>
 
-{% endblock body %}
+{% endblock content %}
 
 
 
