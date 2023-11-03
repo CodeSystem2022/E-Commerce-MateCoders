@@ -26,6 +26,8 @@ class Producto(models.Model):
 class Carrito(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario')
     lista = models.ManyToManyField(Producto)
+    total = models.FloatField(default=0)
+    enviado = models.BooleanField(default=False)
 
     
     def guardar(self):
