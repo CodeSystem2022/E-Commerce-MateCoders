@@ -11,8 +11,10 @@ def registrarse(request):
         if form.is_valid():
             form.save()            
             return HttpResponseRedirect(reverse('login'))
-        else:            
-            return HttpResponseRedirect(reverse('registrarse'))
+        else:
+            return render(request, 'registration/registro.html', {
+            'form': form
+            })
 
     else:        
         form = RegistroForm()

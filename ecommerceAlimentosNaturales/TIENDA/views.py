@@ -127,3 +127,11 @@ def confirmar_pedido(request):
         
 def acerca(request):
     return render(request, 'tienda/acerca.html')
+
+def pedidos(request):
+    pedidos = Carrito.objects.all()
+    pedidos_con_productos = []
+    for pedido in pedidos:
+        productos = pedido.lista.all()
+        pedidos_con_productos.append((pedido, productos))
+    return render(request, 'tienda/pedidos.html', {'pedidos': pedidos_con_productos})

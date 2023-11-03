@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-center">Formulario de Registro</h3>
                         <hr>
-                        <form method="post">
+                        <form action="{% url "USUARIOS:registrarse" %}" method="post">
                             {% csrf_token %}
                             {% for campo in form %}
                                 <div class="mb-3">

@@ -1,0 +1,32 @@
+{% extends "tienda/layout.html" %}
+
+{% block content %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope='col'>N° Pedido</th>
+            <th scope='col'>Usuario</th>
+            <th scope='col'>Lista de productos</th>
+            <th scope='col'>Enviado</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pedido, productos in pedidos %}
+        <tr>
+            <td>{{ pedido.id }}</td>
+            <td>{{ pedido.usuario }}</td>
+            <td><ul>
+                {% for producto in productos %}
+                <li>{{ producto.titulo }}</li>
+                {% endfor %}
+                </ul>
+            </td>
+            <td><input type="checkbox" name="enviado" id="enviado">Enviado</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+</table>
+
+{% endblock content %}

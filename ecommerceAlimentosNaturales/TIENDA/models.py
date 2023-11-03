@@ -9,7 +9,7 @@ class Categoria(models.Model):
     descripcion = models.TextField(max_length=1000)
     
     def __str__(self) -> str:
-        return f'{self.titulo} '
+        return f'{self.titulo}'
 
 
 class Producto(models.Model):
@@ -26,6 +26,7 @@ class Producto(models.Model):
 class Carrito(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario')
     lista = models.ManyToManyField(Producto)
+
     
     def guardar(self):
         self.save()

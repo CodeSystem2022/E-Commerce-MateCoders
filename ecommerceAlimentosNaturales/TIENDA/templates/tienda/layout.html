@@ -46,6 +46,12 @@
                         <a class="nav-link" href="{% url 'tienda:agregar' %}"style="color: #ffffff;">Agregar productos</a>
                     </li>
                     {% endif %}
+                    {% if user.is_staff %}
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="{% url 'tienda:pedidos' %}"style="color: #ffffff;">Pedidos</a>
+                    </li>
+                    {% endif %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false" style="color: #ffffff;">
