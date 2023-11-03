@@ -2,27 +2,39 @@
 
 {% block content %}
 
-<table class="table">
+<table class="table table-striped p-3">
     <thead>
         <tr>
             <th scope='col'>N° Pedido</th>
-            <th scope='col'>Usuario</th>
+            <th scope='col'>Cliente</th>
             <th scope='col'>Lista de productos</th>
+            <th scope='col'>Total</th>
             <th scope='col'>Enviado</th>
         </tr>
     </thead>
     <tbody>
         {% for pedido, productos in pedidos %}
         <tr>
-            <td>{{ pedido.id }}</td>
-            <td>{{ pedido.usuario }}</td>
-            <td><ul>
-                {% for producto in productos %}
-                <li>{{ producto.titulo }}</li>
-                {% endfor %}
+            <td>
+                {{ pedido.id }}
+            </td>
+            <td>
+                {{ pedido.usuario }}
+            </td>
+            <td>
+                <ul>
+                    {% for producto in productos %}
+                    <li>{{ producto.titulo }}</li>
+                    {% endfor %}
                 </ul>
             </td>
-            <td><input type="checkbox" name="enviado" id="enviado">Enviado</td>
+            <td>
+                ${{ pedido.total }}
+            </td>
+            <td>
+                <input type="checkbox" name="enviado" id="enviado" {% if pedido.enviado %}checked{% endif %}>
+                Enviado
+            </td>
         </tr>
         {% endfor %}
     </tbody>
