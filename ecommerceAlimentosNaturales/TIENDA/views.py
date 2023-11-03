@@ -1,4 +1,4 @@
-import django
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.models import Permission, User
 from django.db.models.query_utils import Q
 from django.shortcuts import render, get_object_or_404, redirect
@@ -128,6 +128,7 @@ def confirmar_pedido(request):
 def acerca(request):
     return render(request, 'tienda/acerca.html')
 
+@staff_member_required
 def pedidos(request):
     pedidos = Carrito.objects.all()
     pedidos_con_productos = []
