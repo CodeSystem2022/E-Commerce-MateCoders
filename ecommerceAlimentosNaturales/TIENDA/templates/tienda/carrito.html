@@ -36,11 +36,13 @@
 
 <h4>Total: </h4>
 <div class="container ">
+   <form action="{% url 'tienda:confirmar_pedido' %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="total" value={{ total }}>
+      <button class=" btn btn-secondary"> {{ total }}$ </button>
+      <button class="btn btn-success" type="submit" style="color: white;">Confirmar Pedido</button>
+   </form>
    
-   <button class=" btn btn-secondary"> {{ total }}$ </button>
-   <button class="btn btn-success"> 
-      <a href="{% url 'tienda:confirmar_pedido' %}  " style="color: white;">Confirmar pedido</a> 
-   </button>
 </div>
 
 

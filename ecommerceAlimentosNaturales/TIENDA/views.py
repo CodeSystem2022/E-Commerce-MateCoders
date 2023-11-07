@@ -115,8 +115,9 @@ def borrar_carrito(request):
 
 @login_required
 def confirmar_pedido(request):
+    total = float((request.POST.get("total")).replace(',', '.'))
     usuario = User.objects.get(username=request.user)    
-    cart = Carrito.objects.create(usuario = usuario)
+    cart = Carrito.objects.create(usuario = usuario, total = total)
     cart.save()
     for id in request.session['carrito']:        
         cart.lista.add(Producto.objects.get(id=id))
@@ -130,9 +131,26 @@ def acerca(request):
 
 @staff_member_required
 def pedidos(request):
-    pedidos = Carrito.objects.all()
-    pedidos_con_productos = []
-    for pedido in pedidos:
-        productos = pedido.lista.all()
-        pedidos_con_productos.append((pedido, productos))
-    return render(request, 'tienda/pedidos.html', {'pedidos': pedidos_con_productos})
+    if request.method == 'POST':
+        enviados = {k:v[0] for k,v in dict(request.POST).items()}
+        enviados.pop('csrfmiddlewaretoken')
+        for valor in enviados.items():
+            id_pedido = valor[0]
+            enviado_pedido = True if valor[1] == 'on' else False
+            pedido = Carrito.objects.get(id=id_pedido)
+            pedido.enviado = enviado_pedido
+            pedido.save()
+
+        pedidos = Carrito.objects.all()
+        pedidos_con_productos = []
+        for pedido in pedidos:
+            productos = pedido.lista.all()
+            pedidos_con_productos.append((pedido, productos))
+        return render(request, 'tienda/pedidos.html', {'pedidos': pedidos_con_productos})
+    else:
+        pedidos = Carrito.objects.all()
+        pedidos_con_productos = []
+        for pedido in pedidos:
+            productos = pedido.lista.all()
+            pedidos_con_productos.append((pedido, productos))
+        return render(request, 'tienda/pedidos.html', {'pedidos': pedidos_con_productos})
