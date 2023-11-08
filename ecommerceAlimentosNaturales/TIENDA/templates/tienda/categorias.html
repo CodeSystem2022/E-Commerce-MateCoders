@@ -7,7 +7,7 @@
         {% for c in cat %}
         <div class="col-md-4 mb-3">
             <div class="card text-end carta-categoria">
-                <img src="{{ media_url }}{{ c.imagen.url }}" class="card-img-top" alt="...">
+                <img src="{{ media_url }}{{ c.imagen.url }}" class="card-img-top" alt="..." style="max-height: 15vw;">
                 <div class="card-body">
                     <h5 class="card-title">{{ c.titulo }}</h5>
                     <p class="card-text">{{ c.descripcion | slice:'0:200' }} <a href="{% url 'tienda:producto' c.id %}">...ver más</a></p>

@@ -33,10 +33,10 @@
 <div class="container">
         <div class="row justify-content-md-around">
             {% for producto in nuevos  %}
-                <div class="col-md-3" >
+                <div class="col-md-4" >
                     <div class="card text-end carta-producto " >
                         <div class="card-body ">
-                            <img src=" {{ media_url  }}{{ producto.imagen.url }}" class="card-img-top" alt="...">
+                            <img src=" {{ media_url  }}{{ producto.imagen.url }}" class="card-img-top" alt="..." style="max-height: 15vw;">
                             <h5 class="card-title">{{producto.titulo}}</h5>
                             <p class="card-text">{{producto.descripcion |  slice:'0:50'}}...</p>
                             <p class="card-text precio"> ${{producto.precio}} </p>
@@ -61,7 +61,7 @@
 <table class="table table-hover table-responsive-md">
     {% for producto in productos  %}
         <tr>
-            <td scope="col " class="col-sm-1"> <img src=" {{ media_url  }}{{ producto.imagen.url }}" class= "img-fluid" style="max-width: 55%;" alt= {{producto.titulo}}>  </td>
+            <td scope="col " class="col-sm-1"> <img src=" {{ media_url  }}{{ producto.imagen.url }}" class="img-fluid" style="max-height: 20vh;" alt= {{producto.titulo}}>  </td>
             <td scope="col" style="color: #ffffff;"> {{producto.titulo}} </td>
             <td scope="col" style="color: #ffffff;">{{producto.descripcion |slice:"0:50"}}... </td>
             <td scope="col" style="color: #ffffff;">${{producto.precio}} </td>
