@@ -9,14 +9,14 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active d-item">
+      <div class="carousel-item d-item active">
         <img src="{% static 'media/img/fondonueces1.png' %}" class="d-block w-100 d-img" alt="...">
       </div>
       <div class="carousel-item d-item">
-        <img src="{% static 'media/img/fondonueces1.png' %}" class="d-block w-100 d-img" alt="...">
+        <img src="{% static 'media/img/carrusel 1.png' %}" class="d-block w-100 d-img" alt="...">
       </div>
       <div class="carousel-item d-item">
-        <img src="{% static 'media/img/fondonueces1.png' %}" class="d-block w-100 d-img" alt="...">
+        <img src="{% static 'media/img/carrusel 2.png' %}" class="d-block w-100 d-img" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -29,7 +29,7 @@
     </button>
   </div>
 
-<h2 class="ultimos-text">Últimos Productos Vistos</h2>
+<h2 class="ultimos-text">Últimos Productos Agregados</h2>
 <div class="container">
         <div class="row justify-content-md-around">
             {% for producto in nuevos  %}
@@ -62,9 +62,9 @@
     {% for producto in productos  %}
         <tr>
             <td scope="col " class="col-sm-1"> <img src=" {{ media_url  }}{{ producto.imagen.url }}" class= "img-fluid" style="max-width: 55%;" alt= {{producto.titulo}}>  </td>
-            <td scope="col"> {{producto.titulo}} </td>
-            <td scope="col">{{producto.descripcion |slice:"0:50"}}... </td>
-            <td scope="col">${{producto.precio}} </td>
+            <td scope="col" style="color: #ffffff;"> {{producto.titulo}} </td>
+            <td scope="col" style="color: #ffffff;">{{producto.descripcion |slice:"0:50"}}... </td>
+            <td scope="col" style="color: #ffffff;">${{producto.precio}} </td>
             <td scope="col"><a href="{% url 'tienda:producto' producto.id %}  " class="btn btn-primary">ver más</a> </td>
             
         </tr>
