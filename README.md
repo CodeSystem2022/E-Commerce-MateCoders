@@ -53,27 +53,25 @@ Alimentos naturales5Árbol de informaciónDetalles del proyecto. El desarrollo d
 * Inicializamos el proyecto
 * Inicializamos las dos aplicaciones que modularizan el código del proyecto: TIENDA y USUARIOS
 * Creamos el diagrama de entidades relación para el modelado de datos
-* 
-
-
-
+ 
 
 ### Etapas del video 
 
 #### Primera Parte (5-7min)
 
-* Explicamos el el proyecto y la seleccion de framework
-* Mostramos los Diagramas y El wiframe
-* Circuito admin Creando nueva categoria y cargando productos en el tablero de administracion
-* mostramos las vistas generales desde la pagina, explicando por en cima los distintos objetos que se iteran para construir la pagina
-* Registro de un usuario
-* Compra
-* Circuito de admin para ver los pedidos y marcar que ya fueron despachados
+- [ ] Explicación del proyecto
+- [ ] El wireframe
+- [ ] mostramos las vistas generales desde la pagina,
+- [x] Circuito admin Creando nueva categoria y cargando productos en el tablero de administración
+- [x] Registro de un usuario
+- [x] Compra
+- [ ] Circuito de admin para ver los pedidos y marcar que ya fueron despachados
 
------
+#### Continuación (hasta 30 min) mostramos código desde aca
 
-#### Continuación (hasta 30 min) mostramos codigo desde aca
-
-* Explicacion de Modelos 
-* Explicacion de vistas y la contruccion de objetos a ser iterados en las plantillas
-* Circuitos de Seleccion de productos y confirmacion de carrito desde la vista
+- [ ] la selección de framework:
+- [ ] Mostramos los Diagramas
+- [ ] explicando por encima los distintos objetos que se iteran para construir la pagina
+- [ ] Explicación de Modelos
+- [ ] Explicación de vistas y la contracción de objetos a ser iterados en las plantillas
+- [ ] Circuitos de Selección de productos y confirmación de carrito desde la vista

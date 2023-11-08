@@ -7,6 +7,10 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>ALIMENTOS NATURALES</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favico/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favico/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favico/favicon-16x16.png' %}">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -26,7 +30,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #8C2C08;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'tienda:home' %}" style="color: #ffffff;"><img src="{% static 'media/img/logo.png' %}" alt="Logo de la tienda" width="50" height="50">ALIMENTOS NATURALES</a>
+            <a class="navbar-brand" href="{% url 'tienda:home' %}" style="color: #ffffff;"><img src="{% static 'media/img/logo.png' %}" alt="Logo de la tienda" height="50">ALIMENTOS NATURALES</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"     
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -68,53 +72,49 @@
                     </li>
                 </ul>
 
-                <div class="dropdown">
+                <div class="d-grid gap-2 d-md-block">
                     {% if user.is_authenticated %}
-                    <div class="p-1" style="color: #ffffff">
-                        Bienvenido!
-                    </div>
-                    
-                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        {{user.username}}
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{% url 'logout' %}">Salir </a></li>
+                        <div class="dropdown">
+                            <span class="navbar-text" style="color: #ffffff">
+                            Bienvenido!
+                            </span>
+                            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {{user.username}}
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="{% url 'logout' %}">Salir </a></li>
 
-                    </ul>
+                            </ul>
+                        </div>
                     {% else %}
-                
-                    <div class="d-grid gap-2 d-md-block" style="padding: 10px;">
-                        <button class="btn btn-outline-success" type="button" style="background-color: #3B873B; color: white;"><a href="{% url 'login' %}" style="color: inherit; text-decoration: none;">Ingresar</a></button>
-                        <button class="btn btn-outline-info" type="button" style="background-color: #D97925; color: white;"><a href="{% url 'USUARIOS:registrarse' %}" style="color: inherit; text-decoration: none;">Registrarse</a></button>
-                    </div>
-                    
-
+                    <button class="btn btn-outline-success" type="button" style="background-color: #3B873B; color: white;"><a href="{% url 'login' %}" style="color: inherit; text-decoration: none;">Ingresar</a></button>
+                    <button class="btn btn-outline-info" type="button" style="background-color: #D97925; color: white;"><a href="{% url 'USUARIOS:registrarse' %}" style="color: inherit; text-decoration: none;">Registrarse</a></button>
                     {% endif%}
                 </div>
 
                 &NonBreakingSpace;
-                <form action="{% url 'tienda:buscar' %}" method="get">
+                <form class="d-flex" action="{% url 'tienda:buscar' %}" method="get">
 
-                    <input name="buscar" type="text" placeholder="buscar...">
+                    <input class="form-control me-1" name="buscar" type="text" placeholder="buscar...">
                     <button type="submit" class="btn btn-outline-info">Buscar</button>
                 </form>
+
                 &NonBreakingSpace;
-                
                
                 <!--si el usuario NO puede agregar productos (no es admin) puede ver el boton de carrito -->
-                    {% if not perms.TIENDA.add_producto %}
+                {% if not perms.TIENDA.add_producto %}
                     <img src="https://image.flaticon.com/icons/png/512/419/419910.png" style="max-width: 25px;" alt=""
                     srcset="">
-                <div class="" style="border-radius: 25%;  max-width: 55px; min-width: 25px ">
-                    <p class="font-weight-bold text-center"
-                        style="background-color: rgb(253, 0, 84); border-radius:50%; margin-top:2px ">
+                    <div class="" style="border-radius: 25%;  max-width: 55px; min-width: 25px ">
+                        <p class="font-weight-bold text-center"
+                            style="background-color: rgb(253, 0, 84); border-radius:50%; margin-top:2px ">
 
-                        {{cantidad_productos}}
-                    </p>
+                            {{cantidad_productos}}
+                        </p>
 
-                </div>
-                <a href=" {% url 'tienda:checkout' %} " class="btn btn-warning">&#x1F6D2; </a>
+                    </div>
+                    <a href=" {% url 'tienda:checkout' %} " class="btn btn-warning">&#x1F6D2; </a>
                 {% endif %}
                 &NonBreakingSpace;
 

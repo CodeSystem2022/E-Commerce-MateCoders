@@ -5,26 +5,30 @@
 <p>Resultado de búsqueda: </p>
 
 <hr>
-<div class="row">
-    {% for p in producto %}
+<div class="container">
+    <div class="row">
+        {% for p in producto %}
 
-    <div class="card text-start" style="width: 18rem;">
+        <div class="card text-start" style="width: 18rem;">
 
-        <h5 class="card-title">{{p.titulo}}</h5>
-        <img src=" {{ media_url  }}{{ p.imagen.url }}" class="card-img-top" alt="...">
-        <p class="card-text">
+            <h5 class="card-title">{{p.titulo}}</h5>
+            <img src=" {{ media_url  }}{{ p.imagen.url }}" class="card-img-top" alt="...">
+            <p class="card-text">
 
-            {{p.descripcion |slice:"0:50"}}<a href="{% url 'tienda:producto' p.id %}  " > ...Continuar leyendo</a>
-            <hr>
-            ${{p.precio}}
-        </p>
-        <a href="{% url 'tienda:producto' p.id %}  " class="btn btn-primary">ver más</a>
+                {{p.descripcion |slice:"0:50"}}<a href="{% url 'tienda:producto' p.id %}  " > ...Continuar leyendo</a>
+                <hr>
+                ${{p.precio}}
+            </p>
+            <a href="{% url 'tienda:producto' p.id %}  " class="btn btn-primary">ver más</a>
 
+
+        </div>
+        {% empty %}
+        <h2 class="text-center">Lo lamentamos, no hay coincidencias con su criterio de búsqueda.</h2>
+        {% endfor %}
 
     </div>
-    {% empty %}
-    <h2 class="text-center">Lo lamentamos, no hay coincidencias con su criterio de búsqueda.</h2>
-    {% endfor %}
+
 
 </div>
 
