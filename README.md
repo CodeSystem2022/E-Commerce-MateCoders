@@ -2,30 +2,30 @@
 
 ## Resumen del proyecto
 
-* Alimentos naturales es una empresa de Alvear que se dedica a la venta por mayor y menor de productos alimenticios, tales como frutos secos y frutas deshidratadas.Que en la actualidad no cuenta con presencia digital, y sus ventas se basan en un mercado limitado por las formas tradicionales de comercio
+Alimentos naturales es una empresa de Alvear que se dedica a la venta por mayor y menor de productos alimenticios, tales como frutos secos y frutas deshidratadas.Que en la actualidad no cuenta con presencia digital, y sus ventas se basan en un mercado limitado por las formas tradicionales de comercio
 
 ### Meta
 
-* ⭐ Ampliar la cuota de mercado que tiene la empresa, generado una una herramienta digital para ofrecer sus productos y administrar la toma de pedidos
+⭐ Ampliar la cuota de mercado que tiene la empresa, generado una una herramienta digital para ofrecer sus productos y administrar la toma de pedidos
 
 ## Grupo: Mate-Coders
 
 ### Integrantes
 
-* Facundo Martin Giacomozzi: <facu_giacomozzi@hotmail.com>
-* Matías Canevaro: <matiascanevaro91@gmail.com>
-* Martín Alejandro Torres: <martinalejandrotorres77@gmail.com>
-* Eduardo Luis Gómez: <edubosterogomez@gmail.com>
-* Cinthia Fernanda Segovia: <fers9281@gmail.com>
-* Gabriel Romero: <gabi_r1992@hotmail.com>
-* Agustin Rodriguez Alvarez: <rodriguezalvarezagustin@gmail.com>
-* Lautaro Urquiza: <lauttaro.urquiza@gmail.com>
-* Federico Pfund: <federicopfund@gmail.com>
-* Sabrina Mantero: <sabrinajudithmantero@gmail.com>
+- Facundo Martin Giacomozzi: <facu_giacomozzi@hotmail.com>
+- Matías Canevaro: <matiascanevaro91@gmail.com>
+- Martín Alejandro Torres: <martinalejandrotorres77@gmail.com>
+- Eduardo Luis Gómez: <edubosterogomez@gmail.com>
+- Cinthia Fernanda Segovia: <fers9281@gmail.com>
+- Gabriel Romero: <gabi_r1992@hotmail.com>
+- Agustin Rodriguez Alvarez: <rodriguezalvarezagustin@gmail.com>
+- Lautaro Urquiza: <lauttaro.urquiza@gmail.com>
+- Federico Pfund: <federicopfund@gmail.com>
+- Sabrina Mantero: <sabrinajudithmantero@gmail.com>
 
 ## Wireframes y UX/UI
 
-* El desarrollo de los wireframes, la paleta de colores y el diseño de la interfaz, la hemos trabajado en Figma.
+- El desarrollo de los wireframes, la paleta de colores y el diseño de la interfaz, la hemos trabajado en Figma.
 
 ### Link del proyecto
 
@@ -46,13 +46,13 @@ Alimentos naturales5Árbol de informaciónDetalles del proyecto. El desarrollo d
 
 ### Historial del proyecto
 
-* Primero trabajamos sobre la idea del que se iba a tratar el Ecommerce: Se definió hacer un ecommerce de frutos secos
-* Trabajamos sobre el brief, el wireframe y esto nos ayudo a definir una linea estética a seguir, como los objetivos a cumplir por la pagina
-* Se decidió el framework de trabajo: Django
-* Creamos un repositorio para trabajar en  conjunto y creamos un entorno virtual
-* Inicializamos el proyecto
-* Inicializamos las dos aplicaciones que modularizan el código del proyecto: TIENDA y USUARIOS
-* Creamos el diagrama de entidades relación para el modelado de datos
+- Primero trabajamos sobre la idea del que se iba a tratar el Ecommerce: Se definió hacer un ecommerce de frutos secos
+- Trabajamos sobre el brief, el wireframe y esto nos ayudo a definir una linea estética a seguir, como los objetivos a cumplir por la pagina
+- Se decidió el framework de trabajo: Django
+- Creamos un repositorio para trabajar en  conjunto y creamos un entorno virtual
+- Inicializamos el proyecto
+- Inicializamos las dos aplicaciones que modularizan el código del proyecto: TIENDA y USUARIOS
+- Creamos el diagrama de entidades relación para el modelado de datos
  
 
 ### Etapas del video 
@@ -75,3 +75,30 @@ Alimentos naturales5Árbol de informaciónDetalles del proyecto. El desarrollo d
 - [ ] Explicación de Modelos
 - [ ] Explicación de vistas y la contracción de objetos a ser iterados en las plantillas
 - [ ] Circuitos de Selección de productos y confirmación de carrito desde la vista
+
+
+#### Guion primera parte
+
+##### Explicación del proyecto
+
+En este proyecto, tomamos las necesidades de una empresa hipotética, que se dedica a la venta al por mayo y menor de productos alimenticios, tales como frutos secos y frutas deshidratadas. La plaza de esta empresa es General Alvear y por extension el sur mendocino, pero esta empresa se encuentra limitada a esta plaza ya que solo realiza ventas por medios tradicionales, y no cuenta con presencia digital.
+
+Osea que esta empresa se beneficiaria significativamente al poder expandir su mercado a través de una presencia digital, y también de contar con una herramienta que permita a sus trabajadores organizar y agilizar la toma de pedidos y el seguimiento de los mismos.
+
+##### El wireframe
+
+A la hora de comenzar con el desarrollo del proyecto, empezamos trabajando con la experiencia de usuario que deseamos entregar a traves de la interfaz de la aplicación, tanto como para el cliente como para el trabajador de la pagina, como también definir los lineamientos estéticos y la paleta de colores para que represente la identidad de la empresa.
+
+Para esta parte trabajamos con Figma que es la herramienta estándar de la industria para el diseño de experiencias de usuario.
+
+##### Mostramos las vistas generales desde la página
+
+##### Circuito admin "categoria" y "productos"
+
+Entre las 
+
+##### Registro de un usuario/cliente
+
+##### Compra 
+
+##### Circuito admin gestión de pedidos.
