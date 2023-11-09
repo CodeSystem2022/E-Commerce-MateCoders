@@ -4,36 +4,36 @@
 
 <form action="{% url "tienda:pedidos" %}" method="post">
     {% csrf_token %}
-    <table class="table table-striped p-3">
+    <table class="table table-warning table-spriped mt-3 p-3">
         <thead>
-            <tr>
-                <th scope='col'>N° Pedido</th>
-                <th scope='col'>Cliente</th>
-                <th scope='col'>Lista de productos</th>
-                <th scope='col'>Total</th>
-                <th scope='col'>Enviado</th>
+            <tr class="table-warning">
+                <th class="table-warning" scope='col'>N° Pedido</th>
+                <th class="table-warning" scope='col'>Cliente</th>
+                <th class="table-warning" scope='col'>Lista de productos</th>
+                <th class="table-warning" scope='col'>Total</th>
+                <th class="table-warning" scope='col'>Enviado</th>
             </tr>
         </thead>
         <tbody>
             {% for pedido, productos in pedidos %}
-            <tr>
-                <td>
+            <tr class="table-warning">
+                <td class="table-warning">
                     {{ pedido.id }}
                 </td>
-                <td>
+                <td class="table-warning">
                     {{ pedido.usuario }}
                 </td>
-                <td>
+                <td class="table-warning">
                     <ul>
                         {% for producto in productos %}
                         <li>{{ producto.titulo }}</li>
                         {% endfor %}
                     </ul>
                 </td>
-                <td>
+                <td class="table-warning">
                     ${{ pedido.total }}
                 </td>
-                <td>
+                <td class="table-warning">
                     <input type="checkbox" name="{{ pedido.id }}" id="enviado" {% if pedido.enviado %}checked{% endif %}>
                     Enviado
                 </td>
@@ -43,6 +43,6 @@
         
     </table>
 
-    <button class="btn btn-outline-info" type="submit">Actualizar</button>
+    <button class="btn btn-outline-light" type="submit">Actualizar</button>
 </form>
 {% endblock content %}

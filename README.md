@@ -81,7 +81,7 @@ Alimentos naturales5Árbol de informaciónDetalles del proyecto. El desarrollo d
 
 ##### Explicación del proyecto
 
-En este proyecto, tomamos las necesidades de una empresa hipotética, que se dedica a la venta al por mayo y menor de productos alimenticios, tales como frutos secos y frutas deshidratadas. La plaza de esta empresa es General Alvear y por extension el sur mendocino, pero esta empresa se encuentra limitada a esta plaza ya que solo realiza ventas por medios tradicionales, y no cuenta con presencia digital.
+En este proyecto, tomamos las necesidades de una empresa hipotética, que se dedica a la venta al por mayor y menor de productos alimenticios, tales como frutos secos y frutas deshidratadas. La plaza de esta empresa es General Alvear y por extension el sur mendocino, pero se encuentra limitada a esta plaza ya que solo realiza ventas por medios tradicionales, y no cuenta con presencia digital.
 
 Osea que esta empresa se beneficiaria significativamente al poder expandir su mercado a través de una presencia digital, y también de contar con una herramienta que permita a sus trabajadores organizar y agilizar la toma de pedidos y el seguimiento de los mismos.
 
