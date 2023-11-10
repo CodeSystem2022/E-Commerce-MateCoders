@@ -29,12 +29,9 @@ class Carrito(models.Model):
     total = models.FloatField(default=0)
     enviado = models.BooleanField(default=False)
 
-    
     def guardar(self):
         self.save()
     
     def __str__(self) -> str:
         return f'{self.usuario} '
-    
-    
     

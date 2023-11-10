@@ -2,26 +2,32 @@
 
 {% block content %}
 
-<p>Resultado de búsqueda: </p>
+<h2>Resultado de búsqueda: </h2>
 
 <hr>
 <div class="container">
     <div class="row">
         {% for p in producto %}
+        <div class="col-md-4 mb-3">
+            <div class="card text-end carta-categoria">
 
-        <div class="card text-start" style="width: 18rem;">
+                
+                <img src=" {{ media_url  }}{{ p.imagen.url }}" class="card-img-top" alt="..." style="max-height: 15vw;">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.titulo}}</h5>
+                    <p class="card-text">
 
-            <h5 class="card-title">{{p.titulo}}</h5>
-            <img src=" {{ media_url  }}{{ p.imagen.url }}" class="card-img-top" alt="...">
-            <p class="card-text">
+                        {{p.descripcion |slice:"0:50"}}<a href="{% url 'tienda:producto' p.id %}  " > ...Continuar leyendo</a>
+                        <hr>
+                        ${{p.precio}}
+                    </p>
+                    <a href="{% url 'tienda:producto' p.id %}  " class="btn btn-primary">ver más</a>
+                </div>
+                
+                
 
-                {{p.descripcion |slice:"0:50"}}<a href="{% url 'tienda:producto' p.id %}  " > ...Continuar leyendo</a>
-                <hr>
-                ${{p.precio}}
-            </p>
-            <a href="{% url 'tienda:producto' p.id %}  " class="btn btn-primary">ver más</a>
 
-
+            </div>
         </div>
         {% empty %}
         <h2 class="text-center">Lo lamentamos, no hay coincidencias con su criterio de búsqueda.</h2>

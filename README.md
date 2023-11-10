@@ -73,7 +73,7 @@ Alimentos naturales5Árbol de informaciónDetalles del proyecto. El desarrollo d
 - [ ] Mostramos los Diagramas
 - [ ] explicando por encima los distintos objetos que se iteran para construir la pagina
 - [ ] Explicación de Modelos
-- [ ] Explicación de vistas y la contracción de objetos a ser iterados en las plantillas
+- [ ] Explicación de vistas y la objetos a ser iterados en las plantillas
 - [ ] Circuitos de Selección de productos y confirmación de carrito desde la vista
 
 
@@ -91,7 +91,14 @@ A la hora de comenzar con el desarrollo del proyecto, empezamos trabajando con l
 
 Para esta parte trabajamos con Figma que es la herramienta estándar de la industria para el diseño de experiencias de usuario.
 
+Seleccion de la tipografia 
+
+seleccion del color
+
+
 ##### Mostramos las vistas generales desde la página
+
+
 
 ##### Circuito admin "categoria" y "productos"
 
